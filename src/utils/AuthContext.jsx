@@ -14,6 +14,9 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [errorText, setErrorText] = useState(null);
 
+    const projectUrl = import.meta.env.VITE_PROJECT_URL;
+    const projectUrlLogin = import.meta.env.VITE_PROJECT_URL_LOGIN;
+    
     useEffect(() => {
         setLoading(false);
         setUser(cookies.get("userData"));
@@ -53,8 +56,8 @@ export const AuthProvider = ({ children }) => {
         try {
             const promise = account.createOAuth2Session(
                 "google",
-                "http://localhost:5173/",
-                "http://localhost:5173/login"
+                projectUrl,
+                projectUrlLogin
             );
             getUser();
         } catch (error) {
