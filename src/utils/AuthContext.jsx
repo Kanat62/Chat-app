@@ -14,8 +14,8 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [errorText, setErrorText] = useState(null);
 
-    const projectUrl = import.meta.env.VITE_PROJECT_URL;
-    const projectUrlLogin = import.meta.env.VITE_PROJECT_URL_LOGIN;
+    const projectUrl = window.location.href;
+    const projectUrlLogin = window.location.href + 'login'
     
     useEffect(() => {
         setLoading(false);
