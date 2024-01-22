@@ -1,0 +1,24 @@
+@import "./reset.css";
+@import "./_variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&family=Ubuntu:wght@300;400;500&display=swap');
+
+
+
+
+html, body{
+    height: 100vh;
+    width: 100%;
+    background: $gray;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: $textStandart;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width:500px) {
+        background: #fff;
+    }
+}
+
+a{
+    color:rebeccapurple;
+}

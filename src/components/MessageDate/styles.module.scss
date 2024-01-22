@@ -1,0 +1,17 @@
+.messageDateBox{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #707070;
+    justify-content: center;
+    padding: 5px 0;
+    .messageDateBorder{
+        width: 100%;
+        height: 1px;
+        background:  #f3f3f3;
+        border-radius: 1px;
+    }
+    .messageDate{
+        padding: 0 10px;
+    }
+}

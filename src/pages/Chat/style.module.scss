@@ -1,0 +1,22 @@
+@import "../../assets/styles/variables";
+
+
+.chatContainer{
+    width: 768px;
+    height: 97vh;
+    display: flex;
+    flex-direction: column;
+    background:#fff ;
+    box-shadow: $box-shadow;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    @media screen and (max-width:878px) {
+        width: 700px;
+    }
+    @media screen and (max-width:786px) {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+    }
+}

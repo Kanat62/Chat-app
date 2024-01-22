@@ -1,0 +1,132 @@
+@import "../../assets/styles/_variables.scss";
+
+.container {
+    min-width: 350px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+    overflow: hidden;
+    background: $box-bg;
+    box-shadow: $box-shadow;
+    border-radius: $box-radius;
+    @media screen and (max-width:500px) {
+        box-shadow: none;
+        border-radius: none;
+    }
+}
+.title {
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.subtitle {
+    font-size: 17px;
+    margin-bottom: 25px;
+    font-weight: 500;
+    color: rgb(97, 90, 90);
+}
+.btnGoogle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #c2c8d0;
+    border-radius: 7px;
+    padding: 8px;
+    transition: 0.1s;
+    &:hover {
+        border-color: #444444;
+    }
+    &:active {
+        border: 1px solid #c2c8d0;
+    }
+    & img {
+        width: 21px;
+        height: 21px;
+    }
+    & span {
+        margin-left: 7px;
+    }
+}
+.border {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    & .borderText{
+        padding: 0 10px;
+    }
+    & span:first-child , span:last-child  {
+        width: 100%;
+        height: 1px;
+        background: #c2c8d0;
+    }
+}
+.errorText {
+    font-size: 14px;
+    color: red;
+    margin-bottom: 20px;
+}
+.form {
+    width: 100%;
+}
+.formField {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    position: relative;
+    justify-content: center;
+    & input {
+        padding: 10px;
+        border: 1px solid rgb(197, 197, 197);
+        border-radius: 7px;
+        transition: 0.1s;
+        &:focus {
+            border: 1px solid rgb(59, 58, 58);
+        }
+    }
+    & img {
+        width: 21px;
+        height: 21px;
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        transition: 0.2s;
+        &:hover {
+            transform: scale(1.1);
+        }
+        &:active {
+            transform: scale(1);
+        }
+    }
+}
+.formBtnWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    .formBtn {
+        border: 1px solid #c5c3c3;
+        border-radius: 15px;
+        padding: 8px 20px;
+        transition: 0.1s;
+        &:hover {
+            border-color: #444444;
+        }
+        &:active {
+            border: 1px solid #c2c8d0;
+        }
+    }
+}
+
+.formText {
+    width: 100%;
+    text-align: start;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(95, 91, 91);
+}
