@@ -10,7 +10,7 @@ const RouterPrivate = () => {
         getUser()
     }, []);
     
-    return user ? <Outlet/> : <Navigate to='/'/>
+    return user ? <Navigate to='/'/> : <Navigate to='/login'/>
 }
 
 export default RouterPrivate
