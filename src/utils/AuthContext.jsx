@@ -27,10 +27,13 @@ export const AuthProvider = ({ children }) => {
         try {
             let userData = await account.get();
             console.log(userData);
-
-            setUser(userData);
-            navigate("/");
-            cookies.set("userData", userData);
+            if(userData){
+                setUser(userData);
+                navigate("/");
+                cookies.set("userData", userData);
+                return true 
+            }
+            return false
         } catch (err) {
             console.log(err);
         }
