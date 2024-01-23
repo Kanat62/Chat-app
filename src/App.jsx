@@ -6,7 +6,7 @@ import Register from "./pages/Auth/Register.jsx";
 import RouterPrivate from "./utils/RouterPrivate";
 
 function App() {
-    console.log( window.location.href)
+    console.log( window.location.href + 'login')
     return (
         <>
             <Routes>
