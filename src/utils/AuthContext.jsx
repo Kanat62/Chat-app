@@ -19,7 +19,15 @@ export const AuthProvider = ({ children }) => {
     
     useEffect(() => {
         setLoading(false);
-        setUser(cookies.get("userData"));
+        const cookieFallback = cookies.get("userData")
+        if (
+            cookieFallback === "[]" ||
+            cookieFallback === null ||
+            cookieFallback === undefined
+        ) {
+            navigate("/sign-in");
+        }
+        setUser(cookieFallback);
         // getUser();
     }, []);
 
