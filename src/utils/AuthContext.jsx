@@ -15,33 +15,27 @@ export const AuthProvider = ({ children }) => {
     const [errorText, setErrorText] = useState(null);
 
     const projectUrl = window.location.href;
-    const projectUrlLogin = window.location.href + '/login'
-    
+    const projectUrlLogin = window.location.href + "login";
+
     useEffect(() => {
         setLoading(false);
-        const cookieFallback = cookies.get("userData")
-        if (
-            cookieFallback === "[]" ||
-            cookieFallback === null ||
-            cookieFallback === undefined
-        ) {
-            navigate("/");
+        const getUserCookies = cookies.get("userData");
+        if (getUserCookies) {
+            setUser(getUserCookies);
+            console.log("cookies", cookies.get("userData"));
         }
-        setUser(cookieFallback);
-        // getUser();
+        getUser();
     }, []);
 
     const getUser = async () => {
         try {
             let userData = await account.get();
-            console.log(userData);
-            if(userData){
+            if (userData) {
                 setUser(userData);
                 navigate("/");
                 cookies.set("userData", userData);
-                return true 
+                console.log("getUser", userData);
             }
-            return false
         } catch (err) {
             console.log(err);
         }
@@ -53,7 +47,7 @@ export const AuthProvider = ({ children }) => {
                 userInfo.email,
                 userInfo.password
             );
-           getUser()
+            getUser();
         } catch (error) {
             setErrorText("Нe правильный пароль или емайл!");
             console.log(error);
@@ -64,20 +58,16 @@ export const AuthProvider = ({ children }) => {
     const signInWithGoogle = async () => {
         setLoading(true);
         try {
-            const promise = account.createOAuth2Session(
-                "google",
-                projectUrl,
-                projectUrlLogin
-            );
-            getUser();
+            account.createOAuth2Session("google", projectUrl, projectUrlLogin);
         } catch (error) {
             console.error(error);
         }
+        getUser();
         setLoading(false);
     };
 
     const logout = async () => {
-        await account.deleteSession("current");
+        const resp = await account.deleteSession("current");
         cookies.remove("userData");
         setUser(null);
     };
@@ -96,7 +86,7 @@ export const AuthProvider = ({ children }) => {
                 userInfo.email,
                 userInfo.password1
             );
-           getUser()
+            getUser();
         } catch (error) {
             setErrorText("Пользователь с таким емайлом уже существует!");
             console.log(error);
@@ -113,7 +103,7 @@ export const AuthProvider = ({ children }) => {
         logout,
         register,
         signInWithGoogle,
-        getUser
+        getUser,
     };
 
     return (
@@ -123,7 +113,6 @@ export const AuthProvider = ({ children }) => {
     );
 };
 
-//Custom Hook
 export const useAuth = () => {
     return useContext(AuthContext);
 };
