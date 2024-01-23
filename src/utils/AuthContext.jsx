@@ -36,7 +36,9 @@ export const AuthProvider = ({ children }) => {
                 cookies.set("userData", userData);
                 console.log("getUser", userData);
             }
-        } 
+        } catch (err) {
+            return false
+        }
     };
     const login = async (userInfo) => {
         setLoading(true);
