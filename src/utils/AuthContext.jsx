@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
             cookieFallback === null ||
             cookieFallback === undefined
         ) {
-            navigate("/login");
+            navigate("/");
         }
         setUser(cookieFallback);
         // getUser();
