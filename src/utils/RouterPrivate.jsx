@@ -8,7 +8,7 @@ const RouterPrivate = () => {
     useEffect(() => {
         console.log(user);
         getUser()
-    }, [user]);
+    }, []);
     
     return user ? <Outlet/> : <Navigate to='/login'/>
 }
