@@ -22,7 +22,6 @@ export const AuthProvider = ({ children }) => {
         const getUserCookies = cookies.get("userData");
         if (getUserCookies) {
             setUser(getUserCookies);
-            console.log("cookies", cookies.get("userData"));
         }
         getUser();
     }, []);
@@ -34,7 +33,6 @@ export const AuthProvider = ({ children }) => {
                 setUser(userData);
                 navigate("/");
                 cookies.set("userData", userData);
-                console.log("getUser", userData);
             }
         } catch (err) {
             return false
