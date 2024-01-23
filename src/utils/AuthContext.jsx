@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
     const [errorText, setErrorText] = useState(null);
 
     const projectUrl = window.location.href;
-    const projectUrlLogin = window.location.href + 'login'
+    const projectUrlLogin = window.location.href 
     
     useEffect(() => {
         setLoading(false);
