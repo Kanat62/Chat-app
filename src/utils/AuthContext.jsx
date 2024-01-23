@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
     useEffect(() => {
         setLoading(false);
         setUser(cookies.get("userData"));
-        getUser();
+        // getUser();
     }, []);
 
     const getUser = async () => {
@@ -40,10 +40,7 @@ export const AuthProvider = ({ children }) => {
                 userInfo.email,
                 userInfo.password
             );
-            let userData = await account.get();
-            setUser(userData);
-            navigate("/");
-            cookies.set("userData", userData);
+           getUser()
         } catch (error) {
             setErrorText("Нe правильный пароль или емайл!");
             console.log(error);
@@ -67,7 +64,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     const logout = async () => {
-        await account.deleteSession("current");
+        // await account.deleteSession("current");
         cookies.remove("userData");
         setUser(null);
     };
@@ -86,10 +83,7 @@ export const AuthProvider = ({ children }) => {
                 userInfo.email,
                 userInfo.password1
             );
-            let userData = await account.get();
-            setUser(userData);
-            navigate("/");
-            cookies.set("userData", userData);
+           getUser()
         } catch (error) {
             setErrorText("Пользователь с таким емайлом уже существует!");
             console.log(error);
