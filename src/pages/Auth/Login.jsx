@@ -23,9 +23,6 @@ const Login = () => {
         <div className={styles.container}>
             <h2 className={styles.title}>Авторизация</h2>
             <h3 className={styles.subtitle}>Chat App</h3>
-            <h4 className={styles.subtitle}>
-                {import.meta.env.VITE_APPWRITE_API_ENDPOINT}
-            </h4>
             <button className={styles.btnGoogle} onClick={signInWithGoogle}>
                 <img src={googleIcon} alt="" />
                 <span>Google</span>
