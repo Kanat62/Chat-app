@@ -21,6 +21,9 @@ export const AuthProvider = ({ children }) => {
         setLoading(false);
         setUser(cookies.get("userData"));
         getUser();
+
+                console.log(client,account);
+
     }, []);
 
     const getUser = async () => {
