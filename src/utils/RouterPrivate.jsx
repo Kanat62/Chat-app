@@ -5,10 +5,10 @@ import { useEffect } from "react";
 const RouterPrivate = () => {
     const {user,getUser} = useAuth()
 
-    useEffect(() => {
-        console.log(user);
-        getUser()
-    }, []);
+    // useEffect(() => {
+    //     console.log(user);
+    //     getUser()
+    // }, []);
     
     return user ? <Outlet/> : <Navigate to='/login'/>
 }
