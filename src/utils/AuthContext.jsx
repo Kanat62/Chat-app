@@ -26,6 +26,8 @@ export const AuthProvider = ({ children }) => {
     const getUser = async () => {
         try {
             let userData = await account.get();
+            console.log(userData);
+
             setUser(userData);
             navigate("/");
             cookies.set("userData", userData);
@@ -64,7 +66,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     const logout = async () => {
-        // await account.deleteSession("current");
+        await account.deleteSession("current");
         cookies.remove("userData");
         setUser(null);
     };
