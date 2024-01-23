@@ -3,10 +3,11 @@ import { useAuth } from "./AuthContext";
 import { useEffect } from "react";
 
 const RouterPrivate = () => {
-    const {user} = useAuth()
+    const {user,getUser} = useAuth()
 
     useEffect(() => {
         console.log(user);
+        getUser()
     }, [user]);
     
     return user ? <Outlet/> : <Navigate to='/login'/>
