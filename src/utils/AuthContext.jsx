@@ -67,9 +67,9 @@ export const AuthProvider = ({ children }) => {
     };
 
     const logout = async () => {
+        await account.deleteSession("current");
         cookies.remove("userData");
         setUser(null);
-        account.deleteSession("current");
     };
 
     const register = async (userInfo) => {
