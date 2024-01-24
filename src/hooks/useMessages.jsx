@@ -79,7 +79,7 @@ export const useMessages = () => {
         const permissions = [Permission.write(Role.user(user.$id))];
         const payload = {
             user_id: user.$id,
-            username: user.name,
+            user_name: user.name,
             img_url: image.url,
             img_size: image.size,
         };
