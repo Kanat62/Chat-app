@@ -13,7 +13,7 @@ export const useMessages = () => {
     const { user } = useAuth();
     useEffect(()=>{
         console.log(messages)
-        getMessages();
+        // getMessages();
     },[messages])
     useEffect(() => {
         getMessages();
