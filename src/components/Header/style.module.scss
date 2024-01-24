@@ -7,6 +7,10 @@
     align-items: center;
     padding: 15px;
     box-shadow: $header-shadow;
+
+   @media screen and (max-width:786px) {
+        padding: 5px 10px;
+    } 
 }
 .headerTitle {
     font-size: $h2;
