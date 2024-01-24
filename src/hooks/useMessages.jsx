@@ -27,6 +27,7 @@ export const useMessages = () => {
                         ...prevState,
                         response.payload,
                     ]);
+                     getMessages();
                 }
 
                 if (
