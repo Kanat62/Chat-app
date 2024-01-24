@@ -6,7 +6,6 @@ import { converterTime, formatBytes } from "../../utils/functions";
 const MessageUser = ({ message, showDeleteBtn, isActive, deleteMessage }) => {
     const messageRef = useRef();
     const handledeleteMessage = (id) => {
-        console.log(id);
         messageRef.current.style.background = "red";
         deleteMessage(id);
     };
