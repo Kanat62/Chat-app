@@ -1,7 +1,7 @@
 import styles from "./style.module.scss";
 import deleteIcon from "../../assets/imgs/delete.svg";
 import { useRef } from "react";
-import { converterTime } from "../../utils/functions";
+import { converterTime, formatBytes } from "../../utils/functions";
 
 const MessageUser = ({ message, showDeleteBtn, isActive, deleteMessage }) => {
     const messageRef = useRef();
@@ -39,7 +39,7 @@ const MessageUser = ({ message, showDeleteBtn, isActive, deleteMessage }) => {
                         <div className={styles.itemImgBox}>
                             <img src={message.img_url} alt="" />
                         </div>
-                        <div className={styles.itemImgSize}>12kb</div>
+                        <div className={styles.itemImgSize}>{formatBytes(message.img_size)}</div>
                     </>
                 )}
                 <div className={styles.itemTime}>
