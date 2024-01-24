@@ -14,8 +14,6 @@ export const useMessages = () => {
    
     useEffect(() => {
         getMessages();
-        console.log('work')
-        
         const unsubscribe = client.subscribe(
             `databases.${DATABASE_ID}.collections.${COLLECTION_ID_MESSAGES}.documents`,
             (response) => {
@@ -28,7 +26,6 @@ export const useMessages = () => {
                         ...prevState,
                         response.payload,
                     ]);
-                    console.log('created',response.payload)
                 }
 
                 if (
