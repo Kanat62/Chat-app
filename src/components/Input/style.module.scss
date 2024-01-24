@@ -11,6 +11,9 @@
     margin-top: auto;
     padding: 15px;
     border-top: 1px solid $gray;
+    @media screen and (max-width:500px) {
+        padding-top: 10px;
+    } 
 }
 .inputBox{
     width: 100%;
