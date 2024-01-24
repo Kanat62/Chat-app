@@ -90,6 +90,7 @@ export const useMessages = () => {
             payload,
             permissions
         );
+        getMessages()
     };
 
     const deleteMessage = async (id) => {
