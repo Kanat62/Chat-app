@@ -11,10 +11,7 @@ export const useMessages = () => {
     const [loader, setLoader] = useState(false);
     const [messages, setMessages] = useState([]);
     const { user } = useAuth();
-    useEffect(()=>{
-        console.log(messages)
-        // getMessages();
-    },[messages])
+   
     useEffect(() => {
         getMessages();
 
@@ -30,6 +27,7 @@ export const useMessages = () => {
                         ...prevState,
                         response.payload,
                     ]);
+                    console.log('created')
                 }
 
                 if (
