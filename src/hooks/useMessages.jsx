@@ -27,7 +27,6 @@ export const useMessages = () => {
                         ...prevState,
                         response.payload,
                     ]);
-                     getMessages();
                 }
 
                 if (
@@ -45,6 +44,8 @@ export const useMessages = () => {
         );
         return () => {
             unsubscribe();
+            getMessages();
+            
         };
     }, []);
     const getMessages = async () => {
