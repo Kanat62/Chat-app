@@ -11,7 +11,9 @@ export const useMessages = () => {
     const [loader, setLoader] = useState(false);
     const [messages, setMessages] = useState([]);
     const { user } = useAuth();
-
+    useEffect(()=>{
+        console.log(messages)
+    },[messages])
     useEffect(() => {
         getMessages();
 
@@ -44,8 +46,6 @@ export const useMessages = () => {
         );
         return () => {
             unsubscribe();
-            getMessages();
-            
         };
     }, []);
     const getMessages = async () => {
