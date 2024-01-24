@@ -22,6 +22,10 @@
     padding: 15px;
     position: relative;
     box-shadow: $header-shadow;
+    @media screen and (max-width: 500px) {
+        padding: 10px;
+    }
+    
     .modalCount{
     }
     .modalClose{
