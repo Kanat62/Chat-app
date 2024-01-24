@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./style.module.scss";
-import { converterTime } from "../../utils/functions";
+import { converterTime, formatBytes } from "../../utils/functions";
 import adminIcon from "../../assets/imgs/admin.png";
 import personIcon from "../../assets/imgs/person.svg";
 
@@ -25,7 +25,7 @@ const MessageClient = ({ message }) => {
                             <div className={styles.itemImgBox}>
                                 <img src={message.img_url} alt="" />
                             </div>
-                            <div className={styles.itemImgSize}>12kb</div>
+                            <div className={styles.itemImgSize}>{formatBytes(message.img_size)}</div>
                         </>
                     )}
                     <div className={styles.itemTime}>
