@@ -53,7 +53,7 @@ export const useMessages = () => {
         const response = await databases.listDocuments(
             DATABASE_ID,
             COLLECTION_ID_MESSAGES,
-            [Query.orderAsc("$createdAt"), Query.limit(1000)]
+            [Query.orderAsc("$createdAt"), Query.limit(100000000)]
         );
         setMessages(response.documents);
         setLoader(false);
